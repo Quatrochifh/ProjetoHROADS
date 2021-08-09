@@ -5,3 +5,7 @@ cada uma delas;
  Simulação da estrutura do banco de dados em uma planilha do Excel (ou
 semelhante);
  Scripts de criação, inserção e seleção;
+
+
+
+git push -u origin main
