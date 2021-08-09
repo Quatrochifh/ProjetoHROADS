@@ -1,0 +1,7 @@
+Deverá ser compartilhado o link do GitHub com a pasta do desafio criada dentro do
+repositório da sprint 1 – banco de dados, contendo
+ Um documento de texto com as modelagens e uma breve explicação sobre
+cada uma delas;
+ Simulação da estrutura do banco de dados em uma planilha do Excel (ou
+semelhante);
+ Scripts de criação, inserção e seleção;
