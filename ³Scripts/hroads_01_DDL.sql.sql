@@ -1,0 +1,45 @@
+CREATE DATABASE HROADS_TARDE;
+GO
+
+USE HROADS_TARDE;
+GO
+
+--DDL
+
+CREATE TABLE TipoHabilidade	 (
+ idTipo TINYINT PRIMARY KEY  IDENTITY(1,1),
+ QualTipoHabi VARCHAR(20) NOT NULL,
+);
+GO 
+
+CREATE TABLE Habilidades	 (
+ idHabilidade TINYINT PRIMARY KEY  IDENTITY(1,1),
+ idTipoHabi TINYINT FOREIGN KEY REFERENCES TipoHabilidade(idTipo),
+ QualHabilidade VARCHAR(50) NOT NULL,
+);
+GO 
+
+CREATE TABLE Classes	 (
+ idClasse TINYINT PRIMARY KEY  IDENTITY(1,1),
+ TipoClasse VARCHAR(30) NOT NULL,
+);
+GO 
+
+CREATE TABLE ClasseHabilidade	 (
+ idClasseHabilidade TINYINT PRIMARY KEY  IDENTITY(1,1),
+ idClasse TINYINT FOREIGN KEY REFERENCES Classes(idClasse),
+ idHabilidade TINYINT FOREIGN KEY REFERENCES Habilidades(idHabilidade),
+);
+GO 
+
+
+CREATE TABLE Personagens	 (
+ idPersonagem TINYINT PRIMARY KEY  IDENTITY(1,1),
+ idClasse TINYINT FOREIGN KEY REFERENCES Classes(idClasse),
+ NomePer VARCHAR(50) NOT NULL,
+ CapaMaxVida VARCHAR(20) NOT NULL,
+ CapaMaxMana VARCHAR(20) NOT NULL,
+ DataCriacao VARCHAR(20) NOT NULL,
+ DataAtual VARCHAR(20) NOT NULL,
+);
+GO 
