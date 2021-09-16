@@ -4,6 +4,7 @@ GO
 
 --DML
 
+
 INSERT INTO TipoHabilidade(QualTipoHabi)
 VALUES('Ataque'),('Defesa'),('Cura'),('Magia');
 GO
@@ -36,7 +37,13 @@ INSERT INTO Personagens(idClasse,NomePer,CapaMaxVida,CapaMaxMana,DataCriacao,Dat
 VALUES(1, 'DeBug', '100','80','09/08/2021','DataAtual'), (2,'BitBug','70','100','10/08/2021','DataAtual'), (7,'Fer8','75','60','11/08/2021','DataAtual');
 GO
 
+INSERT INTO tiposUsuarios(titulo)
+VALUES	('Administrador'),('Jogador');
+GO
 
+INSERT INTO usuarios (email,senha,idTipoUsuario)
+VALUES	('admin@admin.com', 'admin', 1),('jogador@jogador.com', 'jogador', 2);
+GO
 
 UPDATE Personagens
 SET NomePer = 'Fer7'

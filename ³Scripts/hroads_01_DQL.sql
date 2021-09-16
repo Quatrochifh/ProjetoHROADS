@@ -12,6 +12,10 @@ SELECT * FROM ClasseHabilidade;
 GO
 SELECT * FROM Personagens;
 GO
+SELECT * FROM tiposUsuarios;
+GO 
+SELECT * FROM usuarios;
+GO 
 
 --Selecionar somente os id’s das habilidades classificando-os por ordem
 --crescente;

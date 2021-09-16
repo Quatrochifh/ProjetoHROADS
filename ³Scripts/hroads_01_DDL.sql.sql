@@ -43,3 +43,19 @@ CREATE TABLE Personagens	 (
  DataAtual VARCHAR(20) NOT NULL,
 );
 GO 
+
+CREATE TABLE tiposUsuarios
+(
+	idTipoUsuario INT PRIMARY KEY IDENTITY,
+	titulo VARCHAR (100) NOT NULL
+);
+GO
+
+CREATE TABLE usuarios
+(
+	idUsuario INT PRIMARY KEY IDENTITY,
+	email VARCHAR(200) UNIQUE NOT NULL,
+	senha VARCHAR(100) NOT NULL,
+	idTipoUsuario INT FOREIGN KEY REFERENCES tiposUsuarios(idTipoUsuario)
+);
+GO
