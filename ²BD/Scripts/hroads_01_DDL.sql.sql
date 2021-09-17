@@ -6,56 +6,57 @@ GO
 
 --DDL
 
-CREATE TABLE TipoHabilidade	 (
- idTipo TINYINT PRIMARY KEY  IDENTITY(1,1),
- QualTipoHabi VARCHAR(20) NOT NULL,
-);
-GO 
-
-CREATE TABLE Habilidades	 (
- idHabilidade TINYINT PRIMARY KEY  IDENTITY(1,1),
- idTipoHabi TINYINT FOREIGN KEY REFERENCES TipoHabilidade(idTipo),
- QualHabilidade VARCHAR(50) NOT NULL,
-);
-GO 
-
-CREATE TABLE Classes	 (
- idClasse TINYINT PRIMARY KEY  IDENTITY(1,1),
- TipoClasse VARCHAR(30) NOT NULL,
-);
-GO 
-
-CREATE TABLE ClasseHabilidade	 (
- idClasseHabilidade TINYINT PRIMARY KEY  IDENTITY(1,1),
- idClasse TINYINT FOREIGN KEY REFERENCES Classes(idClasse),
- idHabilidade TINYINT FOREIGN KEY REFERENCES Habilidades(idHabilidade),
-);
-GO 
-
-
-CREATE TABLE Personagens	 (
- idPersonagem TINYINT PRIMARY KEY  IDENTITY(1,1),
- idClasse TINYINT FOREIGN KEY REFERENCES Classes(idClasse),
- NomePer VARCHAR(50) NOT NULL,
- CapaMaxVida VARCHAR(20) NOT NULL,
- CapaMaxMana VARCHAR(20) NOT NULL,
- DataCriacao VARCHAR(20) NOT NULL,
- DataAtual VARCHAR(20) NOT NULL,
-);
-GO 
-
-CREATE TABLE tiposUsuarios
-(
-	idTipoUsuario INT PRIMARY KEY IDENTITY,
-	titulo VARCHAR (100) NOT NULL
-);
+DROP TABLE Classe;
 GO
 
-CREATE TABLE usuarios
+CREATE TABLE Classe
+(
+	idClasse INT PRIMARY KEY IDENTITY ,
+	TipoClasse VARCHAR(200) NOT NULL
+);
+GO
+CREATE TABLE TipoHabilidade
+(
+	idTipoHabi INT PRIMARY KEY IDENTITY ,
+	QualTipoHabi VARCHAR (200) NOT NULL
+);
+GO
+CREATE TABLE Habilidade
+(
+	idHabilidade INT PRIMARY KEY IDENTITY ,
+	idTipoHabilidade INT FOREIGN KEY REFERENCES TipoHabilidade (idTipoHabilidade),
+	Nome VARCHAR (200) NOT NULL 
+);
+GO
+CREATE TABLE ClasseHabilidade
+(
+	idClasse INT FOREIGN KEY REFERENCES Classe(idClasse),
+	idHabilidade INT FOREIGN KEY REFERENCES Habilidade (idHabilidade)
+
+);
+GO
+CREATE TABLE Personagem 
+(
+	idPersonagem INT PRIMARY KEy IDENTITY,
+	idClasse INT FOREIGN  KEY REFERENCES Classe(idClasse),
+	NomePer VARCHAR (200) NOT NULL,
+	CapaMaxVida INT NOT NULL,
+	CapaMaxMana INT NOT NULL,
+	DataAtual DATE NOT NULL,
+	DataCriacao DATE NOT NULL
+);
+GO
+CREATE TABLE TipoUsuario 
+(
+	idTipoUsuario INT PRIMARY KEY IDENTITY,
+	permissao VARCHAR(200) NOT NULL
+);
+GO
+CREATE TABLE Usuario
 (
 	idUsuario INT PRIMARY KEY IDENTITY,
-	email VARCHAR(200) UNIQUE NOT NULL,
+	email VARCHAR(200) NOT NULL,
 	senha VARCHAR(100) NOT NULL,
-	idTipoUsuario INT FOREIGN KEY REFERENCES tiposUsuarios(idTipoUsuario)
+	idTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(idTipoUsuario)
 );
 GO

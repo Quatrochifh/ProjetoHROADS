@@ -4,17 +4,17 @@ GO
 SELECT * FROM TipoHabilidade;
 GO
 
-SELECT * FROM Classes;
+SELECT * FROM Classe;
 GO
-SELECT * FROM Habilidades;
+SELECT * FROM Habilidade;
 GO
 SELECT * FROM ClasseHabilidade;
 GO
-SELECT * FROM Personagens;
+SELECT * FROM Personagem;
 GO
-SELECT * FROM tiposUsuarios;
+SELECT * FROM TipoUsuario;
 GO 
-SELECT * FROM usuarios;
+SELECT * FROM Usuario;
 GO 
 
 --Selecionar somente os id’s das habilidades classificando-os por ordem

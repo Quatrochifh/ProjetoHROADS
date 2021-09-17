@@ -11,15 +11,15 @@ GO
 
 
 
-INSERT INTO Classes(TipoClasse)
+INSERT INTO Classe(TipoClasse)
 VALUES('Barbaro'),('Cruzado'),('Caçadora de Demônios'),('Monge'),('Necromante'),('Feiticeiro'),('Arcanista');
 GO
 
 
-INSERT INTO Habilidades(idTipoHabi,QualHabilidade)
+INSERT INTO Habilidade(idTipoHabilidade,Nome)
 VALUES(1, 'Lança Mortal'), (2,'Escudo Supremo'), (3,'Recuperar Vida');
 GO
-INSERT INTO Habilidades(idTipoHabi,QualHabilidade)
+INSERT INTO Habilidade(idTipoHabilidade,Nome)
 VALUES(4, 'NULL');
 GO
 
@@ -33,15 +33,15 @@ GO
 
 
 
-INSERT INTO Personagens(idClasse,NomePer,CapaMaxVida,CapaMaxMana,DataCriacao,DataAtual)
-VALUES(1, 'DeBug', '100','80','09/08/2021','DataAtual'), (2,'BitBug','70','100','10/08/2021','DataAtual'), (7,'Fer8','75','60','11/08/2021','DataAtual');
+INSERT INTO Personagem(idClasse,NomePer,CapaMaxVida,CapaMaxMana,DataCriacao,DataAtual)
+VALUES(1, 'DeBug', '100','80','09/08/2021','16/09/2021'), (2,'BitBug','70','100','10/08/2021','15/09/2021'), (7,'Fer8','75','60','11/08/2021','17/09/2021');
 GO
 
-INSERT INTO tiposUsuarios(titulo)
+INSERT INTO TipoUsuario(permissao)
 VALUES	('Administrador'),('Jogador');
 GO
 
-INSERT INTO usuarios (email,senha,idTipoUsuario)
+INSERT INTO Usuario (email,senha,idTipoUsuario)
 VALUES	('admin@admin.com', 'admin', 1),('jogador@jogador.com', 'jogador', 2);
 GO
 
